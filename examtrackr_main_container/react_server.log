@@ -118,3 +118,4 @@ Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS pl
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 
 webpack compiled with 1 error
+Compiling...
