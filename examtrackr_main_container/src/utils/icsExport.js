@@ -33,7 +33,8 @@ export function exportToICS(events, filename = "examtrackr_events.ics") {
     );
   }
   icsContent.push("END:VCALENDAR");
-  const blob = new Blob([icsContent.join("\r\n")], { type: "text/calendar" });
+  const blob = new Blob([icsContent.join("
+")], { type: "text/calendar" });
   const url = window.URL.createObjectURL(blob);
 
   const a = document.createElement("a");
