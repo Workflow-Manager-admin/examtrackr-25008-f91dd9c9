@@ -60,3 +60,4 @@ CREATE INDEX IF NOT EXISTS idx_grades_user_id ON public.grades_reflections (user
 -- ============ Extensions ============
 -- Enable uuid generation if not already enabled
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+get
