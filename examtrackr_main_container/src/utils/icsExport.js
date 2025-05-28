@@ -1,7 +1,7 @@
 /**
- * Utility to export exam or milestone events as .ics file for calendar import.
- * events: Array of { title, description, date (ISO Format) }
- * filename: string
+ * Export array of events to .ics calendar format and trigger file download.
+ * events: Array of { title, description, date (ISO string) }
+ * filename: string (.ics)
  */
 // PUBLIC_INTERFACE
 export function exportToICS(events, filename = "examtrackr_events.ics") {
@@ -16,7 +16,7 @@ export function exportToICS(events, filename = "examtrackr_events.ics") {
   for (const ev of events) {
     const dt = new Date(ev.date);
     const dtStr =
-      dt.getUTCFullYear().toString() +
+      dt.getUTCFullYear() +
       pad(dt.getUTCMonth() + 1) +
       pad(dt.getUTCDate()) +
       "T" +
@@ -36,7 +36,6 @@ export function exportToICS(events, filename = "examtrackr_events.ics") {
   icsContent.push("END:VCALENDAR");
   const blob = new Blob([icsContent.join("\r\n")], { type: "text/calendar" });
   const url = window.URL.createObjectURL(blob);
-
   const a = document.createElement("a");
   a.href = url;
   a.download = filename;
