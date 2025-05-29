@@ -30,6 +30,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "autoprefixer": "^10.4.21",
     "cross-env": "^7.0.3",
     "postcss": "^8.5.3",
